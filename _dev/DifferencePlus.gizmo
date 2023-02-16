@@ -1,6 +1,7 @@
 #! /Applications/Nuke9.0v5/Nuke9.0v5.app/Contents/MacOS//libnuke-9.0.5.dylib -nx
 version 9.0 v5
-Gizmo {
+Group {
+name differencePlus
  inputs 2
  addUserKnob {20 User}
  addUserKnob {41 preblur l "pre blur" T footageblur.size}
