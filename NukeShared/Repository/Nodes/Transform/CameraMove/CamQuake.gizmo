@@ -1,6 +1,7 @@
 #! //Applications/applications/nuke/5.1/64Bit/5.1.2.0/Nuke5.1.exe -nx
 version 5.1200
-Gizmo {
+Group {
+name QuakeCam
  tile_color 0x8ac160ff
  label "v2.0 - dug\n"
  addUserKnob {20 Controls}

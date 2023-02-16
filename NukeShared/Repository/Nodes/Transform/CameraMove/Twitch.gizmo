@@ -1,6 +1,7 @@
 #! C:/Program Files/Nuke6.2v2/Nuke6.2.exe -nx
 version 6.2 v2
-Gizmo {
+Group {
+name Twitch
  tile_color 0xffffffff
  note_font Verdana
  note_font_color 0xff

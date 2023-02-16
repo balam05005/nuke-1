@@ -1,7 +1,8 @@
 # in_RealCameraShake v1.2 - Luca Mignardi - www.lookinvfx.com
 # Real Camera Shake Samples (Steady, Walk and Explosion). Scan recorded with a camera rig and 3D tracked.
 
-Gizmo {
+Group {
+name in_RealCameraShake
  name in_RealCamShake
  knobChanged "\ntk = nuke.thisKnob()\ntn = nuke.thisNode()\n\n\nif tk.name() == 'sample':\n    target_node_name = tn.knob('sample').value()\n\n    with nuke.thisNode():\n        #2D Op\n        tra_expr2d = str(target_node_name) + \"_2D\" + \".translate\"\n        nuke.toNode('Main2D').knob('translate').setExpression(tra_expr2d)        \n\n        rot_expr2d = str(target_node_name) + \"_2D\" + \".rotate\"\n        nuke.toNode('Main2D').knob('rotate').setExpression(rot_expr2d)\n\n        sca_expr2d = str(target_node_name) + \"_2D\" + \".scale\"\n        nuke.toNode('Main2D').knob('scale').setExpression(sca_expr2d)\n\n        cen_expr2d = str(target_node_name) + \"_2D\" + \".center\"\n        nuke.toNode('Main2D').knob('center').setExpression(cen_expr2d)\n\n\n        #3D Op\n        tra_expr3d = str(target_node_name) + \"_3D\" + \".translate\"\n        nuke.toNode('Main3D').knob('translate').setExpression(tra_expr3d)        \n\n        rot_expr3d = str(target_node_name) + \"_3D\" + \".rotate\"\n        nuke.toNode('Main3D').knob('rotate').setExpression(rot_expr3d)\n\n\n\n"
  tile_color 0x196654ff

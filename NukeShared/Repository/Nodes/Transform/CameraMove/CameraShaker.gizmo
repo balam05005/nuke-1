@@ -1,6 +1,7 @@
 #! C:/Program Files/Nuke8.0v7/nuke-8.0.v7.dll -nx
 version 8.0 v7
-Gizmo {
+Group {
+name CameraShaker
  help "Add random camera shake, including motion blur."
  tile_color 0xff0000ff
  label "\[value amplitude] px at \[value frequency]"
