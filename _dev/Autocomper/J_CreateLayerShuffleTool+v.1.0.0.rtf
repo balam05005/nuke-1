@@ -1,0 +1,21 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf100
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww26540\viewh20460\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 set cut_paste_input [stack 0]\
+version 11.3 v2\
+push $cut_paste_input\
+NoOp \{\
+ name J_CreateLayerShuffleTool\
+ tile_color 0x8a74b2ff\
+ selected true\
+ xpos 656\
+ ypos -22\
+ addUserKnob \{20 User\}\
+ addUserKnob \{26 highlight l "Highlight exr:"\}\
+ addUserKnob \{22 create_layershuffle_button l "Create Shuffle Nodes" t "(1) Highlight exr.\\n(2) Push this button!" T "# J_CreateLayerShuffleTool v.1.0.0\\n# 2018 Jazlyn Cartaya\\n\\n# Define variables:\\n\\nselected = nuke.selectedNode()\\nselected.setSelected(False)\\n\\nexr_x_position = nuke.Node.xpos(selected)\\nexr_y_position = nuke.Node.ypos(selected)\\n\\nshuffle_layers = nuke.layers(selected)\\n\\n# Create a list for newly created Shuffle and Dot nodes:\\n\\nshuffle_nodes = \\[]\\ndot_nodes = \\[]\\nbackdrop_nodes = \\[]\\n\\n# Create a Dot and corresponding Shuffle node:\\n\\nfor shuffle_layer in shuffle_layers:\\n    dot_node = nuke.createNode('Dot')\\n    shuffle_node = nuke.createNode('Shuffle')\\n    dot_nodes.append(dot_node)\\n    shuffle_nodes.append(shuffle_node)\\n    shuffle_node.knob('in').setValue(str(shuffle_layer))\\n\\nfor shuffle_node in shuffle_nodes:\\n    shuffle_node.setSelected(False)\\n\\n# Set x and y pos of each Dot node:\\n\\nfor dot_node in dot_nodes:\\n    dot_node.setSelected(True)\\n\\ndot_positionX = 164\\nfor dot_node in dot_nodes:\\n    dot_node.setInput(0, None)\\n    dot_x_position = nuke.Node.xpos(dot_node)\\n    dot_y_position = nuke.Node.ypos(dot_node)\\n    dot_node.setYpos(exr_y_position + 210)\\n    dot_node.setXpos(exr_x_position + dot_positionX - 130)\\n    dot_positionX += 164\\n\\nfor dot_node in dot_nodes:\\n    dot_node.setSelected(False)\\n\\n# Set x and y pos of each Shuffle node:\\n\\nfor shuffle_node in shuffle_nodes:\\n    shuffle_node.setSelected(True)\\n\\n#shuffle_positionX = 164\\nfor shuffle_node in shuffle_nodes:\\n    shuffle_x_position = nuke.Node.xpos(shuffle_node)\\n    shuffle_y_position = nuke.Node.ypos(dot_node)\\n    shuffle_node.setYpos(exr_y_position + 500)\\n    #shuffle_positionX += 164\\n\\n# Set Input:\\n\\ndot_nodes\\[0].setInput(0, selected)\\n\\nfor i, dot_node in enumerate(dot_nodes\\[1:]):\\n    next_dot = dot_nodes\\[i]\\n    dot_node.setInput(0, next_dot)\\n\\n# Create BackDrop Node for each Shuffle node:\\n\\nfor shuffle_node in shuffle_nodes:\\n    shuffle_node.setSelected(True)\\n    backdrop_node = nuke.createNode('BackdropNode')\\n    backdrop_node.knob('bdwidth').setValue(164)\\n    backdrop_node.knob('bdheight').setValue(358)\\n    backdrop_nodes.append(backdrop_node)\\n\\n# Label BackDrop Nodes:\\n\\nfor i, backdrop_node in enumerate(backdrop_nodes):\\n    shuffle_layer = shuffle_layers\\[i]\\n    backdrop_node.knob('label').setValue(shuffle_layer)\\n    backdrop_node.knob('note_font_size').setValue(30)\\n\\n# Set Odd BackDrop Nodes' Light Purple Color:\\n\\nlight_purple = int('%02x%02x%02x%02x' % (0.452*255, 0.409*255, 0.625*255, 255), 16)\\nfor backdrop_node in backdrop_nodes\\[::2]:\\n    backdrop_node.knob('tile_color').setValue(light_purple)\\n\\n# Set Even BackDrop Nodes' Dark Purple Color:\\n\\ndark_purple = int('%02x%02x%02x%02x' % (0.318*255, 0.204*255, 0.592*255, 255), 16)\\nfor backdrop_node in backdrop_nodes\\[1::2]:\\n    backdrop_node.knob('tile_color').setValue(dark_purple)\\n\\n# Set Position of BackDrop Nodes:\\n\\nbackdrop_positionX = 0\\nfor backdrop_node in backdrop_nodes:\\n    backdrop_x_position = nuke.Node.xpos(backdrop_node)\\n    backdrop_y_position = nuke.Node.ypos(backdrop_node)\\n    backdrop_node.setXpos(exr_x_position + backdrop_positionX -40)\\n    backdrop_node.setYpos(shuffle_y_position + 34)\\n    backdrop_positionX += 164" +STARTLINE\}\
+\}\
+}

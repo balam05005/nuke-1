@@ -1,0 +1,14 @@
+set cut_paste_input [stack 0]
+version 10.5 v2
+Read {
+ inputs 0
+ file "\[python \{Object3D_path\} ]/TestAOV/render/helicopter.exr"
+ format "1934 1088 0 0 1934 1088 1 "
+ origset true
+ auto_alpha true
+ name HELICOPTER
+ tile_color 0x6bd60001
+ selected true
+ xpos -1314
+ ypos -285
+}

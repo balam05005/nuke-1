@@ -1,0 +1,2 @@
+Basic gizmo principles
+https://benmcewan.com/blog/2019/10/21/back-to-basics-common-errors-when-creating-a-gizmo/

@@ -1,0 +1,46 @@
+https://learn.foundry.com/nuke/developers/130/pythondevguide/index.html
+
+
+https://learn.foundry.com/nuke/developers/63/ndkdevguide/knobs-and-handles/knobtypes.html
+
+Camera presets
+https://vfxcamdb.com/
+
+
+objective: create some tools that link to AI tools that aide in VFX
+
+
+Defocus plus has an image on the icon
+Autoflare needs fixing so that it reads the images and presets
+http://vincentwauters.com/programming/autoflare20-for-nuke
+
+
+exr layer suffler since layerShuffler doesn't work anymore
+Have it rebuild the commposite based on the engine it came from
+
+
+Dynamic luma key that uses a tracker and 
+balanced luma keyer
+use gradmagic
+or magic carpet
+idkeyer has a coloridpick that could be used for the picks
+colorspace to change to HSL 
+
+
+
+
+Muzzle flash kit with real muzzle flashes
+
+color palette
+
+Tracking grid for better tracking
+
+
+
+
+proper burn in
+
+
+AI link for skin smoothing, relighting, blending, etc
+
+Use AI to build backgrounds for movies and stuff

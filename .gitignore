@@ -1,5 +1,7 @@
 # Ignore this stuff specifically
-_*
+_devx
+_icon_work
+_library
 
 # MAC crap
 **/.DS_Store

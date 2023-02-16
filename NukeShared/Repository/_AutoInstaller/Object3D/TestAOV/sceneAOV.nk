@@ -1,0 +1,981 @@
+set cut_paste_input [stack 0]
+version 10.5 v2
+BackdropNode {
+ inputs 0
+ name BackdropNode19
+ tile_color 0x64646401
+ label GROUND
+ note_font_size 42
+ selected true
+ xpos -3192
+ ypos -1917
+ bdwidth 545
+ bdheight 650
+ z_order -1
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode3
+ tile_color 0x64646401
+ label HELICOPTER
+ note_font_size 42
+ selected true
+ xpos -3856
+ ypos -4352
+ bdwidth 1885
+ bdheight 2360
+ z_order -1
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode1
+ tile_color 0xaaaaaa00
+ label distort
+ note_font_size 42
+ selected true
+ xpos -3407
+ ypos -4270
+ bdwidth 233
+ bdheight 164
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode10
+ tile_color 0x3d3d6bff
+ label deep
+ note_font_size 42
+ selected true
+ xpos -2657
+ ypos -4269
+ bdwidth 212
+ bdheight 265
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode11
+ tile_color 0xbcd9ff01
+ gl_color 0xffe9aaff
+ label geo
+ note_font_size 42
+ selected true
+ xpos -2882
+ ypos -1822
+ bdwidth 166
+ bdheight 163
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode12
+ tile_color 0x405e71ff
+ note_font_size 42
+ selected true
+ xpos -2748
+ ypos -3868
+ bdwidth 293
+ bdheight 191
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode13
+ tile_color 0x567284ff
+ note_font_size 42
+ selected true
+ xpos -2410
+ ypos -3869
+ bdwidth 185
+ bdheight 186
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode14
+ tile_color 0x7a9aafff
+ note_font_size 42
+ selected true
+ xpos -2200
+ ypos -3869
+ bdwidth 166
+ bdheight 184
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode15
+ tile_color 0x7171c600
+ note_font_size 42
+ selected true
+ xpos -3670
+ ypos -4208
+ bdwidth 167
+ bdheight 176
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode16
+ tile_color 0xc5b76701
+ note_font_size 42
+ selected true
+ xpos -3137
+ ypos -1824
+ bdwidth 225
+ bdheight 164
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode17
+ tile_color 0x7171c600
+ note_font_size 42
+ selected true
+ xpos -3038
+ ypos -1590
+ bdwidth 231
+ bdheight 149
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode18
+ tile_color 0x1b507101
+ note_font_size 42
+ selected true
+ xpos -3452
+ ypos -1179
+ bdheight 164
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode2
+ label "place here the color correction"
+ note_font_size 64
+ selected true
+ xpos -3661
+ ypos -3175
+ bdwidth 1379
+ bdheight 392
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode4
+ tile_color 0xaaaaaa00
+ label undistort
+ note_font_size 42
+ selected true
+ xpos -3144
+ ypos -4269
+ bdwidth 233
+ bdheight 164
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode5
+ tile_color 0xb5ffde01
+ label CAM
+ note_font_size 42
+ selected true
+ xpos -2405
+ ypos -4252
+ bdwidth 159
+ bdheight 167
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode6
+ tile_color 0xffe9aaff
+ gl_color 0xffe9aaff
+ label HDR
+ note_font_size 42
+ selected true
+ xpos -2875
+ ypos -4266
+ bdwidth 186
+ bdheight 175
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode7
+ tile_color 0x1b507101
+ note_font_size 42
+ selected true
+ xpos -3514
+ ypos -3857
+ bdwidth 353
+ bdheight 179
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode8
+ tile_color 0x1b507101
+ note_font_size 42
+ selected true
+ xpos -3120
+ ypos -3860
+ bdwidth 143
+ bdheight 183
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode9
+ tile_color 0x1b507101
+ note_font_size 42
+ selected true
+ xpos -2941
+ ypos -3861
+ bdwidth 143
+ bdheight 183
+}
+StickyNote {
+ inputs 0
+ name StickyNote3
+ label "multiply to diffuse"
+ note_font_size 32
+ selected true
+ xpos -3696
+ ypos -2707
+}
+StickyNote {
+ inputs 0
+ name StickyNote2
+ label "add all rawlight"
+ note_font_size 32
+ selected true
+ xpos -3382
+ ypos -2710
+}
+Read {
+ inputs 0
+ file "\[python \{Object3D_path\} ]/TestAOV/lens_distortion/distort.exr"
+ format "1920 1080 0 0 1920 1080 1 HD_1080"
+ origset true
+ auto_alpha true
+ name Read1
+ selected true
+ xpos -3264
+ ypos -4190
+}
+set N44e11f70 [stack 0]
+push 0
+STMap {
+ inputs 2
+ uv rgb
+ name STMap1
+ selected true
+ xpos -3397
+ ypos -4166
+}
+Read {
+ inputs 0
+ file "\[python \{Object3D_path\} ]/TestAOV/elements/HDR.hdr"
+ format "2434 1024 0 0 2434 1024 1 "
+ origset true
+ auto_alpha true
+ name Read4
+ selected true
+ xpos -2821
+ ypos -4207
+}
+Sphere {
+ radius 3
+ name Sphere1
+ selected true
+ xpos -2821
+ ypos -4115
+}
+Read {
+ inputs 0
+ file "\[python \{Object3D_path\} ]/TestAOV/lens_distortion/undistort.exr"
+ format "1920 1080 0 0 1920 1080 1 HD_1080"
+ origset true
+ auto_alpha true
+ name Read3
+ selected true
+ xpos -3002
+ ypos -4200
+}
+push 0
+STMap {
+ inputs 2
+ uv rgb
+ name STMap2
+ selected true
+ xpos -3135
+ ypos -4176
+}
+Read {
+ inputs 0
+ file "\[python \{Object3D_path\} ]/TestAOV/render/helicopter.exr"
+ format "1934 1088 0 0 1934 1088 1 "
+ origset true
+ auto_alpha true
+ name Read2
+ selected true
+ xpos -3628
+ ypos -4146
+}
+set N44e3d490 [stack 0]
+Dot {
+ name Dot60
+ selected true
+ xpos -3594
+ ypos -3820
+}
+set Nfec4ff0 [stack 0]
+Dot {
+ name Dot16
+ selected true
+ xpos -3469
+ ypos -3820
+}
+set Nfec53b0 [stack 0]
+Dot {
+ name Dot20
+ selected true
+ xpos -3345
+ ypos -3820
+}
+set Nfec5770 [stack 0]
+Dot {
+ name Dot21
+ selected true
+ xpos -3226
+ ypos -3820
+}
+set Nfec64e0 [stack 0]
+Dot {
+ name Dot22
+ selected true
+ xpos -3050
+ ypos -3820
+}
+set Nfec8840 [stack 0]
+add_layer {P P.NX P.NY P.NZ P.red P.green P.blue P.alpha}
+Shuffle {
+ in P
+ alpha black
+ name Shuffle13
+ label "\[value in]"
+ note_font_size 32
+ selected true
+ xpos -3084
+ ypos -3765
+}
+push $cut_paste_input
+Camera2 {
+ read_from_file true
+ translate {-460.5914307 85.93427277 616.0464478}
+ rotate {2.067840099 -31.32198715 1.897553086}
+ uniform_scale 10
+ focal 23.95791435
+ haperture 26.48888969
+ vaperture 14.90000046
+ near 0.009999999776
+ file "\[python \{Object3D_path\} ]/TestAOV/obj/camera.fbx"
+ version 2
+ fbx_node_name {{7} "Producer Perspective" "Producer Top" "Producer Bottom" "Producer Front" "Producer Back" "Producer Right" "Producer Left" renderCam1}
+ name CAM
+ selected true
+ xpos -2356
+ ypos -4168
+}
+Dot {
+ name Dot19
+ selected true
+ xpos -2332
+ ypos -4041
+}
+DeepRead {
+ inputs 0
+ file "\[python \{Object3D_path\} ]/TestAOV/deep/deepHelicopter.exr"
+ format "1934 1088 0 0 1934 1088 1 "
+ origset true
+ name DeepRead1
+ selected true
+ xpos -2591
+ ypos -4199
+}
+DeepTransform {
+ zscale 10
+ name DeepTransform1
+ selected true
+ xpos -2591
+ ypos -4117
+}
+DeepToPoints {
+ inputs 2
+ name DeepToPoints1
+ selected true
+ xpos -2591
+ ypos -4044
+}
+push $Nfec8840
+Dot {
+ name Dot23
+ selected true
+ xpos -2872
+ ypos -3820
+}
+set Nfef5e90 [stack 0]
+Dot {
+ name Dot24
+ selected true
+ xpos -2681
+ ypos -3820
+}
+set N1e79e120 [stack 0]
+add_layer {ID01 ID01.red ID01.green ID01.blue ID01.r ID01.b ID01.blue}
+Shuffle {
+ in ID01
+ alpha black
+ name Shuffle15
+ label "\[value in]"
+ note_font_size 32
+ selected true
+ xpos -2715
+ ypos -3764
+}
+push $N1e79e120
+Dot {
+ name Dot25
+ selected true
+ xpos -2530
+ ypos -3820
+}
+set N1e78cee0 [stack 0]
+add_layer {ID02 ID02.red ID02.green ID02.blue none ID02.b ID02.blue}
+Shuffle {
+ in ID02
+ alpha black
+ name Shuffle16
+ label "\[value in]"
+ note_font_size 32
+ selected true
+ xpos -2564
+ ypos -3761
+}
+push $N1e78cee0
+Dot {
+ name Dot27
+ selected true
+ xpos -2328
+ ypos -3820
+}
+set N1e759be0 [stack 0]
+Shuffle {
+ in depth
+ alpha black
+ name Shuffle17
+ label "\[value in]"
+ note_font_size 32
+ selected true
+ xpos -2362
+ ypos -3761
+}
+StickyNote {
+ inputs 0
+ name StickyNote5
+ label "add reflection"
+ note_font_size 32
+ selected true
+ xpos -3675
+ ypos -2450
+}
+StickyNote {
+ inputs 0
+ name StickyNote6
+ label "add refraction"
+ note_font_size 32
+ selected true
+ xpos -3674
+ ypos -2348
+}
+StickyNote {
+ inputs 0
+ name StickyNote4
+ label "add specular"
+ note_font_size 32
+ selected true
+ xpos -3676
+ ypos -2569
+}
+Read {
+ inputs 0
+ file "\[python \{Object3D_path\} ]/TestAOV/render/ground.exr"
+ format "1934 1088 0 0 1934 1088 1 "
+ origset true
+ auto_alpha true
+ name Read6
+ selected true
+ xpos -3127
+ ypos -1744
+}
+Dot {
+ name Dot1
+ selected true
+ xpos -3093
+ ypos -1519
+}
+set N1e7d5d70 [stack 0]
+Dot {
+ name Dot2
+ selected true
+ xpos -2994
+ ypos -1519
+}
+set N1e7d8230 [stack 0]
+LayerContactSheet {
+ showLayerNames true
+ name LayerContactSheet4
+ selected true
+ xpos -3028
+ ypos -1478
+}
+push $N44e11f70
+PostageStamp {
+ name distort
+ selected true
+ xpos -3749
+ ypos -2110
+ hide_input true
+ postage_stamp true
+}
+push $Nfec4ff0
+Unpremult {
+ channels all
+ name Unpremult1
+ selected true
+ xpos -3628
+ ypos -3526
+}
+Dot {
+ name Dot44
+ selected true
+ xpos -3594
+ ypos -3446
+}
+set N1e7e77c0 [stack 0]
+Dot {
+ name Dot45
+ selected true
+ xpos -3776
+ ypos -3446
+}
+Dot {
+ name Dot46
+ selected true
+ xpos -3776
+ ypos -2210
+}
+push $N1e7e77c0
+Dot {
+ name Dot47
+ selected true
+ xpos -3309
+ ypos -3446
+}
+set N1e7ee7c0 [stack 0]
+Dot {
+ name Dot48
+ selected true
+ xpos -3035
+ ypos -3446
+}
+set N1e7f0d60 [stack 0]
+Dot {
+ name Dot49
+ selected true
+ xpos -2698
+ ypos -3446
+}
+set N1e7f3300 [stack 0]
+Dot {
+ name Dot50
+ selected true
+ xpos -2544
+ ypos -3446
+}
+set N1e7f58a0 [stack 0]
+Dot {
+ name Dot51
+ selected true
+ xpos -2384
+ ypos -3446
+}
+add_layer {refraction refraction.red refraction.green refraction.blue}
+Shuffle {
+ in refraction
+ alpha black
+ name Shuffle6
+ label "\[value in]"
+ note_font_size 32
+ selected true
+ xpos -2418
+ ypos -3372
+}
+Dot {
+ name Dot52
+ selected true
+ xpos -2384
+ ypos -2273
+}
+push $N1e7f58a0
+add_layer {reflection reflection.red reflection.green reflection.blue}
+Shuffle {
+ in reflection
+ alpha black
+ name Shuffle4
+ label "\[value in]"
+ note_font_size 32
+ selected true
+ xpos -2578
+ ypos -3372
+}
+Dot {
+ name Dot53
+ selected true
+ xpos -2544
+ ypos -2388
+}
+push $N1e7f3300
+add_layer {specular specular.red specular.green specular.blue}
+Shuffle {
+ in specular
+ alpha black
+ name Shuffle5
+ label "\[value in]"
+ note_font_size 32
+ selected true
+ xpos -2732
+ ypos -3372
+}
+Dot {
+ name Dot54
+ selected true
+ xpos -2698
+ ypos -2499
+}
+push $N1e7f0d60
+add_layer {indirect indirect.red indirect.green indirect.blue}
+Shuffle {
+ in indirect
+ alpha black
+ name Shuffle3
+ label "\[value in]"
+ note_font_size 32
+ selected true
+ xpos -3069
+ ypos -3372
+}
+push $N1e7e77c0
+add_layer {diffuse_raw diffuse_raw.red diffuse_raw.green diffuse_raw.blue}
+Shuffle {
+ in diffuse_raw
+ alpha black
+ name Shuffle1
+ label "\[value in]"
+ note_font_size 32
+ selected true
+ xpos -3628
+ ypos -3372
+}
+Dot {
+ name Dot55
+ selected true
+ xpos -3594
+ ypos -3247
+}
+set N2b027b90 [stack 0]
+Dot {
+ name Dot56
+ selected true
+ xpos -3349
+ ypos -3247
+}
+set N2b02a050 [stack 0]
+Dot {
+ name Dot57
+ selected true
+ xpos -3075
+ ypos -3247
+}
+Merge2 {
+ inputs 2
+ operation divide
+ name Merge2
+ selected true
+ xpos -3069
+ ypos -3210
+}
+Dot {
+ name Dot58
+ selected true
+ xpos -3035
+ ypos -2620
+}
+push $N1e7ee7c0
+add_layer {diffuse diffuse.red diffuse.green diffuse.blue}
+Shuffle {
+ in diffuse
+ alpha black
+ name Shuffle2
+ label "\[value in]"
+ note_font_size 32
+ selected true
+ xpos -3343
+ ypos -3372
+}
+push $N2b02a050
+Merge2 {
+ inputs 2
+ operation divide
+ name Merge1
+ selected true
+ xpos -3343
+ ypos -3212
+}
+Merge2 {
+ inputs 2
+ operation plus
+ name Merge3
+ selected true
+ xpos -3343
+ ypos -2623
+}
+push $N2b027b90
+Dot {
+ name Dot26
+ selected true
+ xpos -3594
+ ypos -2662
+}
+Merge2 {
+ inputs 2
+ operation multiply
+ name Merge4
+ selected true
+ xpos -3628
+ ypos -2623
+}
+Merge2 {
+ inputs 2
+ operation plus
+ name Merge6
+ selected true
+ xpos -3628
+ ypos -2502
+}
+Merge2 {
+ inputs 2
+ operation plus
+ name Merge5
+ selected true
+ xpos -3628
+ ypos -2391
+}
+Merge2 {
+ inputs 2
+ operation plus
+ name Merge8
+ selected true
+ xpos -3628
+ ypos -2276
+}
+Copy {
+ inputs 2
+ from0 rgba.alpha
+ to0 rgba.alpha
+ name Copy17
+ selected true
+ xpos -3628
+ ypos -2217
+}
+Premult {
+ name Premult1
+ selected true
+ xpos -3628
+ ypos -2171
+}
+STMap {
+ inputs 2
+ uv rgb
+ name STMap3
+ selected true
+ xpos -3628
+ ypos -2090
+}
+Dot {
+ name Dot30
+ selected true
+ xpos -3594
+ ypos -823
+}
+push $N44e11f70
+PostageStamp {
+ name distort1
+ selected true
+ xpos -2976
+ ypos -1365
+ hide_input true
+ postage_stamp true
+}
+push $N1e7d5d70
+STMap {
+ inputs 2
+ uv rgb
+ name STMap4
+ selected true
+ xpos -3127
+ ypos -1345
+}
+Dot {
+ name Dot31
+ selected true
+ xpos -3093
+ ypos -847
+}
+Read {
+ inputs 0
+ file "\[python \{Object3D_path\} ]/TestAOV/elements/background.png"
+ format "1920 1080 0 0 1920 1080 1 HD_1080"
+ origset true
+ auto_alpha true
+ name Read5
+ selected true
+ xpos -3442
+ ypos -1099
+}
+Merge2 {
+ inputs 2
+ name Merge12
+ selected true
+ xpos -3442
+ ypos -850
+}
+Merge2 {
+ inputs 2
+ name Merge11
+ selected true
+ xpos -3442
+ ypos -826
+}
+push $Nfef5e90
+add_layer {UVPass UVPass.NX UVPass.NY UVPass.NZ}
+Shuffle {
+ in UVPass
+ alpha black
+ name Shuffle14
+ label "\[value in]"
+ note_font_size 32
+ selected true
+ xpos -2906
+ ypos -3765
+}
+CheckerBoard2 {
+ inputs 0
+ name CheckerBoard1
+ selected true
+ xpos -2796
+ ypos -3637
+}
+STMap {
+ inputs 2
+ channels rgb
+ uv rgb
+ name STMap5
+ selected true
+ xpos -2906
+ ypos -3613
+}
+push $N44e3d490
+LayerContactSheet {
+ showLayerNames true
+ name LayerContactSheet3
+ selected true
+ xpos -3783
+ ypos -4118
+}
+push $N1e759be0
+Dot {
+ name Dot59
+ selected true
+ xpos -2120
+ ypos -3820
+}
+add_layer {N_world N_world.NX N_world.NY N_world.NZ}
+PositionToPoints2 {
+ display textured
+ render_mode textured
+ P_channel P
+ N_channel N_world
+ name PositionToPoints1
+ selected true
+ xpos -2154
+ ypos -3754
+}
+push $N1e7d8230
+Dot {
+ name Dot3
+ selected true
+ xpos -2863
+ ypos -1519
+}
+PositionToPoints2 {
+ display textured
+ render_mode textured
+ P_channel P
+ N_channel N_world
+ name PositionToPoints2
+ selected true
+ xpos -2897
+ ypos -1479
+}
+push $Nfec5770
+add_layer {N_obj N_obj.NX N_obj.NY N_obj.NZ}
+Shuffle {
+ in N_obj
+ alpha black
+ name Shuffle11
+ label "\[value in]"
+ note_font_size 32
+ selected true
+ xpos -3379
+ ypos -3768
+}
+push $Nfec53b0
+add_layer {N_cam N_cam.NX N_cam.NY N_cam.NZ}
+Shuffle {
+ in N_cam
+ alpha black
+ name Shuffle10
+ label "\[value in]"
+ note_font_size 32
+ selected true
+ xpos -3503
+ ypos -3769
+}
+push $Nfec64e0
+Shuffle {
+ in N_world
+ in2 alpha
+ alpha red2
+ name Shuffle12
+ label "\[value in]"
+ note_font_size 32
+ selected true
+ xpos -3260
+ ypos -3767
+}
+DeepRead {
+ inputs 0
+ file "\[python \{Object3D_path\} ]/TestAOV/deep/deepGround.exr"
+ format "1934 1088 0 0 1934 1088 1 "
+ origset true
+ name DeepRead2
+ selected true
+ xpos -3002
+ ypos -1720
+}
+ReadGeo2 {
+ inputs 0
+ file "\[python \{Object3D_path\} ]/TestAOV/obj/ground.fbx"
+ read_on_each_frame true
+ name ReadGeo2
+ selected true
+ xpos -2838
+ ypos -1727
+}

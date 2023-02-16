@@ -1,0 +1,36 @@
+Dot {
+ name dotLinker1
+ help "A smart Dot to easily connect to nodes in your nukescript in an efficient way.\n\nDevloped by Tor Andreassen - www.fxtor.net"
+ onCreate "try:\n    dotLinker.resetOnPaste()\n    dotLinker.firstCreation()\nexcept NameError:\n    pass"
+ onDestroy "try:\n    dotLinker.killGlobal()\nexcept NameError:\n    pass"
+ knobChanged "try:\n    dotLinker.knobsUpdate()\nexcept NameError:\n    pass"
+ label "<img src='Dot.png'><br /><font color='#ccc'>dotLinker</font>"
+ note_font_size 20
+ selected true
+ xpos -195
+ ypos -67
+ addUserKnob {20 fxT_dotLinkerTAB l fxT_dotLinker}
+ addUserKnob {6 isdotLinker l INVISIBLE t "this knob is to identify dotLinker dots\nso global dotLinker list can be deleted onDestroy if no dotLinker nodes exist in script anymore\n(do not delete this knob)" -STARTLINE +INVISIBLE}
+ addUserKnob {1 inputNode l "input node" t "shows current input node, type a node-name directly here to connect to it"}
+ addUserKnob {26 spacer l "" -STARTLINE T "        "}
+ addUserKnob {26 input_status l "" -STARTLINE T "<i style=\"color:yellow\">No Connection</i> "}
+ addUserKnob {22 zoomInput l "zoom to input" t "zoom to input node" T "try:\n    dotLinker.zoomInput()\nexcept NameError:\n    pass\n\n" +STARTLINE}
+ addUserKnob {22 zoomThis l "zoom to this" t "zoom to this node" -STARTLINE T "try:\n    dotLinker.zoomThis()\nexcept NameError:\n    pass"}
+ addUserKnob {22 exprBugFix l INVISIBLE t "hidden knob to programaticly fix nuke bug showing expression pipes (don't delete this knob)" -STARTLINE +INVISIBLE}
+ addUserKnob {26 ""}
+ addUserKnob {4 labelType l "label type" M {"input node" "input label" "extra label only" ""}}
+ addUserKnob {1 extraLabel l "extra label" -STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {4 quickList t "this is a quickList where you can save nodes for easy picking a node to connect to later" M {-----}}
+ addUserKnob {22 add l "<font color='silver'>add</font>" t "Add the current input node to the quickList.\n\nPS: This will also refresh the list to include any global quickList nodes. Non-existent nodes will be removed." T "try:\n    dotLinker.makeGlobal()\n    dotLinker.addButton()\nexcept NameError:\n    pass" +STARTLINE}
+ addUserKnob {22 remove l "<font color='silver'>remove</font>" t "Remove the current item from the quickList.\n\nPS: This will also refresh the list to include any global quickList nodes. Non-existent nodes will be removed." -STARTLINE T "try:\n    dotLinker.makeGlobal()\n    dotLinker.removeButton()\nexcept NameError:\n    pass"}
+ addUserKnob {22 clear l "<font color='silver'>clear</font>" t "clear all items in the quickList." -STARTLINE T "try:\n    dotLinker.clearButton()\nexcept NameError:\n    pass"}
+ addUserKnob {22 reload l "<font color='silver'>reload list</font>" t "Rebuild quickList and remove any non-existent nodes." -STARTLINE T "try:\n    dotLinker.makeGlobal()\n    dotLinker.reloadButton()\nexcept NameError:\n    pass"}
+ addUserKnob {22 connect l "<font color='lime'>connect</font>" t "Connect to the selected node in the quickList." -STARTLINE T "try:\n    dotLinker.connectButton()\nexcept NameError:\n    pass"}
+ addUserKnob {26 ""}
+ addUserKnob {6 hideInput l "hide input" t "Don't draw the arrow going into this node when it's not selected." -STARTLINE}
+ hideInput true
+ addUserKnob {6 initialized l INVISIBLE t "ensure onCreate callback only happens on first creation. (don't delete this knob)" -STARTLINE +INVISIBLE}
+ addUserKnob {26 ""}
+ addUserKnob {26 copyright l "" +STARTLINE T "<font color='grey'>// fxT_dotLinker v1.1 © Tor Andreassen - www.fxtor.net</font>"}
+}
